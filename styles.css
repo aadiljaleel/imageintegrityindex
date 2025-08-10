@@ -372,11 +372,17 @@ p {
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .upload-box:hover {
     border-color: #2563eb;
     background: #f1f5f9;
+}
+
+.upload-box.file-selected {
+    border-color: #10b981;
+    background: #f0fdf4;
 }
 
 .upload-box i {
@@ -398,6 +404,8 @@ p {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .upload-btn:hover {
@@ -418,11 +426,45 @@ p {
     border-color: #cbd5e1;
 }
 
+/* Progress Bar */
+.progress-bar {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.progress-text {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
 .result-section {
     background: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 }
 
 .score-result {
@@ -431,10 +473,25 @@ p {
     text-align: center;
     margin: 1rem 0;
     color: #2563eb;
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+.result-explanation {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
 }
 
 .share-options {
     margin-top: 2rem;
+}
+
+.share-options h4 {
+    margin-bottom: 1rem;
+    color: #374151;
 }
 
 .share-options textarea {
@@ -446,6 +503,13 @@ p {
     font-family: 'Courier New', monospace;
     background: #f8fafc;
     margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.share-options textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .calculator-info {
@@ -455,18 +519,142 @@ p {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+.calculator-info h3 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.calculator-info p {
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+    margin: 2rem 0;
+}
+
+.tech-stack h4 {
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
 .tech-stack ul {
     list-style: none;
     margin-top: 1rem;
 }
 
 .tech-stack li {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
 }
 
 .tech-stack li:last-child {
     border-bottom: none;
+}
+
+.tech-stack li strong {
+    color: #2563eb;
+    margin-right: 0.5rem;
+    min-width: 80px;
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 400px;
+    font-weight: 500;
+}
+
+.toast-success {
+    background: #10b981;
+    color: white;
+}
+
+.toast-error {
+    background: #ef4444;
+    color: white;
+}
+
+.toast-info {
+    background: #3b82f6;
+    color: white;
+}
+
+/* File validation feedback */
+.upload-box.invalid {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.upload-box.invalid i {
+    color: #ef4444;
+}
+
+/* Enhanced hover effects */
+.upload-box:hover i {
+    color: #2563eb;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.file-selected i {
+    color: #10b981;
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+    .calculator-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .upload-box {
+        padding: 1.5rem;
+    }
+    
+    .score-result {
+        font-size: 1.5rem;
+    }
+    
+    .progress-bar {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .upload-box {
+        padding: 1rem;
+    }
+    
+    .upload-box h4 {
+        font-size: 1rem;
+    }
+    
+    .upload-box p {
+        font-size: 0.9rem;
+    }
+    
+    .upload-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .toast {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
 }
 
 /* Scenarios Section */

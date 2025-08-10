@@ -27,121 +27,157 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Calculator functionality
-const sourceFileInput = document.getElementById('source-file');
-const finalFileInput = document.getElementById('final-file');
-const calculateBtn = document.getElementById('calculate-btn');
-const resultSection = document.getElementById('result-section');
-const scoreResult = document.getElementById('score-result');
-const resultExplanation = document.getElementById('result-explanation');
-const shareText = document.getElementById('share-text');
+// Import I³ Calculator (will be loaded as module)
+let I3CalculatorInterface;
 
-let sourceFile = null;
-let finalFile = null;
-
-// File input handlers
-sourceFileInput.addEventListener('change', function(e) {
-    sourceFile = e.target.files[0];
-    updateCalculateButton();
-    if (sourceFile) {
-        this.nextElementSibling.textContent = sourceFile.name;
-        this.parentElement.style.borderColor = '#10b981';
-    }
-});
-
-finalFileInput.addEventListener('change', function(e) {
-    finalFile = e.target.files[0];
-    updateCalculateButton();
-    if (finalFile) {
-        this.nextElementSibling.textContent = finalFile.name;
-        this.parentElement.style.borderColor = '#10b981';
-    }
-});
-
-function updateCalculateButton() {
-    if (sourceFile && finalFile) {
-        calculateBtn.disabled = false;
-        calculateBtn.innerHTML = '<i class="fas fa-calculator"></i> Calculate I³ Score';
-    } else {
-        calculateBtn.disabled = true;
-        calculateBtn.innerHTML = '<i class="fas fa-calculator"></i> Select both files to calculate';
-    }
-}
-
-// Calculate button handler (placeholder functionality)
-calculateBtn.addEventListener('click', function() {
-    if (!sourceFile || !finalFile) return;
-    
-    // Show loading state
-    calculateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Calculating...';
-    calculateBtn.disabled = true;
-    
-    // Simulate calculation (replace with actual algorithm when implemented)
-    setTimeout(() => {
-        // Generate example scores based on file names/types
-        const globalScore = generateMockGlobalScore();
-        const structuralScore = generateMockStructuralScore();
+// Initialize I³ Calculator when page loads
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        // Dynamic import for modern browsers
+        const { default: Calculator } = await import('./js/i3-calculator-interface.js');
+        I3CalculatorInterface = Calculator;
         
-        // Display results
-        displayResults(globalScore, structuralScore);
+        // Initialize calculator
+        window.i3Calculator = new I3CalculatorInterface();
         
-        // Reset button
-        calculateBtn.innerHTML = '<i class="fas fa-calculator"></i> Calculate I³ Score';
-        calculateBtn.disabled = false;
-    }, 2000);
+        console.log('I³ Calculator initialized successfully');
+    } catch (error) {
+        console.warn('Could not load I³ Calculator module:', error);
+        // Fallback to the original placeholder functionality
+        initializeFallbackCalculator();
+    }
+    
+    // Initialize other components
+    setupDragAndDrop();
+    lazyLoadImages();
+    
+    const animatedElements = document.querySelectorAll('.about-card, .step, .scenario-card, .community-card');
+    animatedElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
 });
 
-function generateMockGlobalScore() {
-    // Generate a realistic global score (60-98)
-    return Math.floor(Math.random() * 38) + 60;
-}
+// Fallback calculator for browsers that don't support modules
+function initializeFallbackCalculator() {
+    console.log('Using fallback calculator implementation');
+    
+    const sourceFileInput = document.getElementById('source-file');
+    const finalFileInput = document.getElementById('final-file');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const resultSection = document.getElementById('result-section');
+    const scoreResult = document.getElementById('score-result');
+    const resultExplanation = document.getElementById('result-explanation');
+    const shareText = document.getElementById('share-text');
 
-function generateMockStructuralScore() {
-    // Generate a realistic structural score (70-100)
-    return Math.floor(Math.random() * 30) + 70;
-}
+    let sourceFile = null;
+    let finalFile = null;
 
-function displayResults(globalScore, structuralScore) {
-    const i3Score = `G${globalScore}/S${structuralScore}`;
-    
-    scoreResult.textContent = i3Score;
-    shareText.value = `Image Integrity Index: ${i3Score}`;
-    
-    // Generate explanation based on scores
-    let explanation = generateExplanation(globalScore, structuralScore);
-    resultExplanation.textContent = explanation;
-    
-    // Show results section
-    resultSection.style.display = 'block';
-    resultSection.scrollIntoView({ behavior: 'smooth' });
-}
-
-function generateExplanation(globalScore, structuralScore) {
-    let explanation = '';
-    
-    // Global score interpretation
-    if (globalScore >= 90) {
-        explanation += 'Minimal color/tone adjustments. ';
-    } else if (globalScore >= 75) {
-        explanation += 'Moderate color/tone adjustments. ';
-    } else if (globalScore >= 60) {
-        explanation += 'Significant color/tone adjustments. ';
-    } else {
-        explanation += 'Heavy color/tone adjustments. ';
+    // File input handlers
+    if (sourceFileInput) {
+        sourceFileInput.addEventListener('change', function(e) {
+            sourceFile = e.target.files[0];
+            updateCalculateButton();
+            if (sourceFile) {
+                this.nextElementSibling.textContent = sourceFile.name;
+                this.parentElement.style.borderColor = '#10b981';
+            }
+        });
     }
-    
-    // Structural score interpretation
-    if (structuralScore >= 95) {
-        explanation += 'Original content fully preserved.';
-    } else if (structuralScore >= 85) {
-        explanation += 'Minor content modifications.';
-    } else if (structuralScore >= 70) {
-        explanation += 'Some content manipulation present.';
-    } else {
-        explanation += 'Significant content manipulation or compositing.';
+
+    if (finalFileInput) {
+        finalFileInput.addEventListener('change', function(e) {
+            finalFile = e.target.files[0];
+            updateCalculateButton();
+            if (finalFile) {
+                this.nextElementSibling.textContent = finalFile.name;
+                this.parentElement.style.borderColor = '#10b981';
+            }
+        });
     }
-    
-    return explanation;
+
+    function updateCalculateButton() {
+        if (!calculateBtn) return;
+        
+        if (sourceFile && finalFile) {
+            calculateBtn.disabled = false;
+            calculateBtn.innerHTML = '<i class="fas fa-calculator"></i> Calculate I³ Score';
+        } else {
+            calculateBtn.disabled = true;
+            calculateBtn.innerHTML = '<i class="fas fa-calculator"></i> Select both files to calculate';
+        }
+    }
+
+    // Calculate button handler (placeholder functionality)
+    if (calculateBtn) {
+        calculateBtn.addEventListener('click', function() {
+            if (!sourceFile || !finalFile) return;
+            
+            // Show loading state
+            calculateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Calculating...';
+            calculateBtn.disabled = true;
+            
+            // Simulate calculation
+            setTimeout(() => {
+                const globalScore = generateMockGlobalScore();
+                const structuralScore = generateMockStructuralScore();
+                
+                displayResults(globalScore, structuralScore);
+                
+                calculateBtn.innerHTML = '<i class="fas fa-calculator"></i> Calculate I³ Score';
+                calculateBtn.disabled = false;
+            }, 2000);
+        });
+    }
+
+    function generateMockGlobalScore() {
+        return Math.floor(Math.random() * 38) + 60;
+    }
+
+    function generateMockStructuralScore() {
+        return Math.floor(Math.random() * 30) + 70;
+    }
+
+    function displayResults(globalScore, structuralScore) {
+        const i3Score = `G${globalScore}/S${structuralScore}`;
+        
+        if (scoreResult) scoreResult.textContent = i3Score;
+        if (shareText) shareText.value = `Image Integrity Index: ${i3Score}`;
+        
+        let explanation = generateExplanation(globalScore, structuralScore);
+        if (resultExplanation) resultExplanation.textContent = explanation;
+        
+        if (resultSection) {
+            resultSection.style.display = 'block';
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function generateExplanation(globalScore, structuralScore) {
+        let explanation = '';
+        
+        if (globalScore >= 90) {
+            explanation += 'Minimal color/tone adjustments. ';
+        } else if (globalScore >= 75) {
+            explanation += 'Moderate color/tone adjustments. ';
+        } else if (globalScore >= 60) {
+            explanation += 'Significant color/tone adjustments. ';
+        } else {
+            explanation += 'Heavy color/tone adjustments. ';
+        }
+        
+        if (structuralScore >= 95) {
+            explanation += 'Original content fully preserved.';
+        } else if (structuralScore >= 85) {
+            explanation += 'Minor content modifications.';
+        } else if (structuralScore >= 70) {
+            explanation += 'Some content manipulation present.';
+        } else {
+            explanation += 'Significant content manipulation or compositing.';
+        }
+        
+        return explanation;
+    }
 }
 
 // Copy to clipboard functionality
