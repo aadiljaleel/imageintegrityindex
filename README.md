@@ -237,6 +237,152 @@ This is a **grassroots community project**. Join us in building transparency in 
 
 ---
 
-*Built with ❤️ for the photography community*
+## 🎯 The Greater Vision: Industry-Wide Adoption
 
-**License**: MIT | **Website**: [imageintegrityindex.com](https://aadiljaleel.github.io/imageintegrityindex/) | **GitHub**: [@aadiljaleel](https://github.com/aadiljaleel)
+### **Making I³ a Universal Standard at Camera Manufacturer Level**
+
+While our current browser-based calculator demonstrates the concept, the ultimate goal is to establish the Image Integrity Index as a **universal standard implemented directly by camera manufacturers** (Canon, Nikon, Sony, etc.) at the hardware and firmware level.
+
+---
+
+## 📋 Technical Proposal for OEM Implementation
+
+### **Objective**
+To establish a transparent, computationally verifiable standard for quantifying the degree of post-capture alteration in digital images. This index would be embedded in image metadata and serve as a reliable gauge of authenticity for photographers, news agencies, and consumers worldwide.
+
+### **1. The I³ Standard Definition**
+
+The index consists of two scores stored in the format **I³: G[value]/S[value]**.
+
+- **Global Adjustment Score (GAS)**: Score from 100 (identical) to 0 (highly dissimilar) measuring changes in overall tonal and color distribution. Quantifies "darkroom-style" edits.
+
+- **Structural Manipulation Score (SMS)**: Score from 100 (identical) to 0 (highly dissimilar) measuring changes to underlying content and composition, such as object addition/removal or geometric transformations.
+
+### **2. Technical Workflow & Implementation**
+
+#### **2.1. In-Camera Requirement: The Trust Anchor**
+
+For the I³ system to be secure and verifiable, camera manufacturers must implement the following process upon capture:
+
+1. **Generate RAW File**: Camera captures and saves the full RAW file data (`.CR3`, `.NEF`, `.ARW`, etc.)
+
+2. **Generate Authenticity Hash**: Camera firmware calculates a SHA-256 hash of the entire, unmodified RAW file data
+
+3. **Generate Perceptual Baseline**: Firmware generates a small, unprocessed baseline image (512x512 pixel TIFF from center sensor data) as the reference for I³ calculations
+
+4. **Embed Trust Anchor**: Both SHA-256 hash and baseline image are embedded into a protected segment of the RAW file's metadata as immutable ground truth
+
+#### **2.2. Editing Software Role: The Calculation Engine**
+
+Professional editing software would integrate I³ calculation:
+
+1. **Verification**: Upon import, software verifies Trust Anchor integrity by recalculating SHA-256 hash
+2. **Calculation**: Uses embedded baseline as "original" to compare against final edited image
+3. **Export**: Calculates final GAS and SMS scores and embeds them in exported file metadata
+
+#### **2.3. Data Embedding: XMP Standard**
+
+The I³ score would be written to XMP (Extensible Metadata Platform) metadata:
+
+```xml
+Namespace: i3
+Property: i3:Index
+Example Value: G92/S95
+Property: i3:SourceHash  
+Example Value: [SHA-256 hash from camera]
+```
+
+### **3. Algorithm Specifications**
+
+#### **3.1. Global Adjustment Score (GAS) Calculation**
+
+1. **Color Space Conversion**: Convert baseline and final images to CIE LAB color space
+2. **Histogram Generation**: Create 1D histograms for L* (Lightness), a* (green-red), b* (blue-yellow) channels
+3. **Distance Calculation**: Use Earth Mover's Distance (EMD) between histograms
+4. **Normalization**: Apply standardized formula with threshold for maximum plausible edit
+
+```
+Total Distance: D = 0.5⋅dL + 0.25⋅da + 0.25⋅db
+Final Score: GAS = 100 × max(0, 1 - D/Tmax)
+```
+
+#### **3.2. Structural Manipulation Score (SMS) Calculation**
+
+1. **Perceptual Hashing**: Generate pHash for both images using 8x8 DCT grid
+2. **Feature Detection**: Extract key feature points using ORB or SIFT algorithms  
+3. **Spatial Analysis**: Compare structural integrity and object boundaries
+4. **Combined Scoring**: Weight and combine metrics for final SMS value
+
+### **4. Industry Implementation Roadmap**
+
+#### **Phase 1: Specification & Standards** *(Current)*
+- ✅ **Open Source Proof of Concept** (Our current calculator)
+- 📋 **Technical Specification Development**
+- 🤝 **Industry Working Group Formation**
+- 📜 **Standardization Body Submission** (ISO, IEEE)
+
+#### **Phase 2: Pilot Integration** *(6-12 months)*
+- 🔧 **SDK Development** for camera manufacturers
+- 🧪 **Pilot Programs** with forward-thinking camera brands
+- 📱 **Mobile Implementation** in smartphone cameras
+- 🏆 **Professional Market Validation**
+
+#### **Phase 3: Widespread Adoption** *(1-3 years)*
+- 📷 **Major Camera Manufacturer Integration**
+- 💻 **Editing Software Support** (Adobe, Capture One, etc.)
+- 🌐 **Platform Integration** (Instagram, Flickr, news sites)
+- 📊 **Consumer Awareness Campaigns**
+
+#### **Phase 4: Universal Standard** *(3-5 years)*
+- 🌍 **Global Industry Standard**
+- 📺 **Regulatory Recognition** for journalism/legal evidence
+- 🎓 **Educational Integration** in photography courses
+- 🔒 **Trust Infrastructure** for digital media
+
+### **5. Benefits for Camera Manufacturers**
+
+#### **Competitive Advantage**
+- **First-mover advantage** in transparency technology
+- **Professional market differentiation** 
+- **Trust building** with serious photographers
+- **Future-proofing** against deepfakes and AI manipulation
+
+#### **Technical Benefits**
+- **Minimal firmware impact** - lightweight implementation
+- **Backward compatibility** - works with existing RAW formats
+- **Open standard** - no proprietary lock-in
+- **Incremental rollout** - start with flagship models
+
+#### **Market Positioning**
+- **Professional credibility** enhancement
+- **Photojournalism market** penetration
+- **Educational sector** appeal
+- **Brand leadership** in digital authenticity
+
+### **6. Call to Action for Industry**
+
+#### **For Camera Manufacturers**
+- 📧 **Contact us** to discuss pilot implementation
+- 🔬 **Review our algorithms** and provide feedback
+- 🤝 **Join the working group** to shape the standard
+- 💡 **Contribute engineering expertise** to refinement
+
+#### **For Software Developers**
+- 🛠️ **Integrate I³ calculation** into editing workflows
+- 📊 **Support XMP metadata** reading/writing
+- 🔌 **Build API integrations** for platform support
+- 🧪 **Test with our reference implementation**
+
+#### **For Photography Community**
+- 📢 **Advocate** with your preferred camera brands
+- 📝 **Provide feedback** on algorithm accuracy
+- 🌟 **Use and share** I³ scores in your work
+- 🗣️ **Spread awareness** about transparency benefits
+
+---
+
+**The future of photography is transparent.** Help us make the Image Integrity Index the universal standard for digital image authenticity.
+
+📧 **Get Involved**: [Join our discussions](https://github.com/aadiljaleel/imageintegrityindex/discussions) | [Contact for partnerships](https://github.com/aadiljaleel/imageintegrityindex/issues)
+
+---
