@@ -192,6 +192,30 @@ p {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .hero-visual {
@@ -218,6 +242,20 @@ p {
 .score-explanation {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+.score-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 /* About Section */
@@ -268,6 +306,22 @@ p {
     background: #f1f5f9;
     padding: 0.5rem 1rem;
     border-radius: 6px;
+}
+
+.score-tech {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid #2563eb;
+}
+
+.score-tech small {
+    color: #64748b;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* How It Works Section */
@@ -332,6 +386,44 @@ p {
     gap: 1rem;
     margin-top: 1rem;
     color: #666;
+}
+
+.step-features {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.share-platforms {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.platform {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f3e8ff;
+    color: #7c3aed;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .share-example {
@@ -559,6 +651,23 @@ p {
     min-width: 80px;
 }
 
+.feature-highlights {
+    margin: 1.5rem 0;
+}
+
+.feature-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    color: #059669;
+}
+
+.feature-highlight i {
+    color: #10b981;
+    font-size: 1rem;
+}
+
 /* Toast Notifications */
 .toast {
     position: fixed;
@@ -699,6 +808,37 @@ p {
     padding: 1.5rem;
 }
 
+.scenario-use {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 6px;
+    color: #2563eb;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scenarios-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(37, 99, 235, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.scenarios-cta h3 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.scenarios-cta p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
 /* Community Section */
 .community {
     padding: 80px 0;
@@ -710,11 +850,61 @@ p {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.community-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0 3rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .stat-number {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-item .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 .community-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+.community-call-to-action {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.community-call-to-action h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.community-call-to-action p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .community-card {
@@ -838,6 +1028,15 @@ p {
         font-size: 2rem;
     }
     
+    .hero-stats {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .community-stats {
+        gap: 1.5rem;
+    }
+    
     .calculator-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -853,6 +1052,11 @@ p {
         text-align: center;
     }
     
+    .step-features,
+    .share-platforms {
+        justify-content: center;
+    }
+    
     .scenarios-grid {
         grid-template-columns: 1fr;
     }
@@ -861,7 +1065,8 @@ p {
         grid-template-columns: 1fr;
     }
     
-    .hero-buttons {
+    .hero-buttons,
+    .cta-buttons {
         justify-content: center;
     }
 }

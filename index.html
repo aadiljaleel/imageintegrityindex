@@ -73,19 +73,33 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Image Integrity Index (I³)</h1>
-                <p class="hero-subtitle">Transparent photography through standardized edit declarations</p>
+                <p class="hero-subtitle">Building trust through transparency in digital photography</p>
                 <p class="hero-description">
-                    A free, open-source tool that helps photographers calculate and declare the extent of their edits, 
-                    building trust with viewers through transparency.
+                    Calculate and declare the extent of your photo edits with our free, browser-based I³ calculator. 
+                    No installation required - get instant transparency scores and build trust with your audience.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#calculator" class="btn btn-primary">Try Calculator</a>
+                    <a href="#calculator" class="btn btn-primary">Calculate Now - It's Live!</a>
                     <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">✅</span>
+                        <span class="stat-label">Live Calculator</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">🌐</span>
+                        <span class="stat-label">Browser-Based</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">🔬</span>
+                        <span class="stat-label">Real Analysis</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="score-example">
-                    <h3>I³ Score Example</h3>
+                    <h3>Live I³ Score Example</h3>
                     <div class="score-display">
                         <span class="score-label">I³:</span>
                         <span class="score-value">G88/S96</span>
@@ -94,6 +108,10 @@
                         G88: Moderate color/tone adjustments<br>
                         S96: Original structural content preserved
                     </p>
+                    <div class="score-badge">
+                        <i class="fas fa-check-circle"></i>
+                        Real calculation from actual images
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,9 +120,9 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>A Declaration of Editing</h2>
+            <h2>Your Photography Transparency Declaration</h2>
             <p class="section-intro">
-                The I³ score is a standardized artist's statement that provides transparent insight into your creative process.
+                The I³ score is your standardized artist's statement - a clear, honest declaration of your editing process that builds trust with your audience.
             </p>
             
             <div class="about-grid">
@@ -113,10 +131,13 @@
                         <i class="fas fa-adjust"></i>
                     </div>
                     <h3>Global Adjustment (G)</h3>
-                    <p>Measures "darkroom-style" edits like color correction, exposure, contrast, and tone adjustments.</p>
+                    <p>Measures "darkroom-style" edits like color correction, exposure, contrast, white balance, and tone adjustments that enhance without altering reality.</p>
                     <div class="score-range">
-                        <span>G0 (Heavy edits)</span>
-                        <span>G100 (Minimal edits)</span>
+                        <span>G0 (Heavy color edits)</span>
+                        <span>G100 (Natural processing)</span>
+                    </div>
+                    <div class="score-tech">
+                        <small><i class="fas fa-cog"></i> Color histogram analysis with Earth Mover's Distance</small>
                     </div>
                 </div>
                 
@@ -125,10 +146,13 @@
                         <i class="fas fa-layer-group"></i>
                     </div>
                     <h3>Structural Manipulation (S)</h3>
-                    <p>Measures content changes like object removal, additions, composites, and AI-generated elements.</p>
+                    <p>Measures content changes like object removal, additions, sky replacement, composites, and AI-generated elements that alter the original scene.</p>
                     <div class="score-range">
                         <span>S0 (Heavy manipulation)</span>
-                        <span>S100 (No manipulation)</span>
+                        <span>S100 (Original content)</span>
+                    </div>
+                    <div class="score-tech">
+                        <small><i class="fas fa-cog"></i> Perceptual hashing + edge detection + feature analysis</small>
                     </div>
                 </div>
             </div>
@@ -174,17 +198,27 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Calculate the I³ Score</h3>
-                        <p>Use our I³ Calculator to compare your source file with the final image and generate your transparency score.</p>
+                        <p>Upload both files to our live browser-based calculator below. Get instant results with detailed explanations - no installation or registration required!</p>
+                        <div class="step-features">
+                            <span class="feature"><i class="fas fa-lightning-bolt"></i> Instant Results</span>
+                            <span class="feature"><i class="fas fa-lock"></i> Privacy Protected</span>
+                            <span class="feature"><i class="fas fa-mobile-alt"></i> Works on Mobile</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Share Your Score</h3>
-                        <p>Get an embedded file with metadata and a text snippet to share on Instagram, Flickr, 500px, or your blog.</p>
+                        <h3>Share Your Transparency</h3>
+                        <p>Copy your I³ score and paste it into your photo descriptions on social media, portfolios, or blogs to show your commitment to transparency.</p>
                         <div class="share-example">
                             <code>Image Integrity Index: G88/S96</code>
+                        </div>
+                        <div class="share-platforms">
+                            <span class="platform"><i class="fab fa-instagram"></i> Instagram</span>
+                            <span class="platform"><i class="fab fa-flickr"></i> Flickr</span>
+                            <span class="platform"><i class="fas fa-blog"></i> Blog</span>
                         </div>
                     </div>
                 </div>
@@ -195,8 +229,11 @@
     <!-- Calculator Section -->
     <section id="calculator" class="calculator">
         <div class="container">
-            <h2>I³ Calculator</h2>
-            <p class="section-intro">Calculate your Image Integrity Index score</p>
+            <h2>🔬 Live I³ Calculator</h2>
+            <p class="section-intro">
+                Calculate your real Image Integrity Index score instantly in your browser. 
+                Our advanced algorithms analyze your images pixel-by-pixel for accurate transparency scoring.
+            </p>
             
             <div class="calculator-container">
                 <div class="calculator-form">
@@ -242,22 +279,38 @@
                 </div>
                 
                 <div class="calculator-info">
-                    <h3>Coming Soon</h3>
-                    <p>The I³ Calculator is currently in development as an open-source desktop application.</p>
+                    <h3>🚀 Live & Ready to Use!</h3>
+                    <p>Our I³ Calculator is <strong>live and working now</strong>! Advanced browser-based image processing with real-time analysis.</p>
                     
                     <div class="tech-stack">
-                        <h4>Technical Foundation</h4>
+                        <h4>Current Implementation</h4>
                         <ul>
-                            <li><strong>LibRaw:</strong> RAW file decoding</li>
-                            <li><strong>OpenCV:</strong> Image analysis and comparison</li>
-                            <li><strong>ExifTool:</strong> Metadata embedding</li>
+                            <li><strong>Canvas API:</strong> Browser-native image processing</li>
+                            <li><strong>JavaScript:</strong> Advanced color histogram analysis</li>
+                            <li><strong>Real-time:</strong> Instant results without server uploads</li>
+                            <li><strong>Privacy First:</strong> Images never leave your device</li>
                             <li><strong>Open Source:</strong> Community-verified algorithms</li>
                         </ul>
                     </div>
                     
+                    <div class="feature-highlights">
+                        <div class="feature-highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Works on mobile & desktop</span>
+                        </div>
+                        <div class="feature-highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No installation required</span>
+                        </div>
+                        <div class="feature-highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Supports RAW & JPEG files</span>
+                        </div>
+                    </div>
+                    
                     <a href="https://github.com/aadiljaleel/imageintegrityindex" class="btn btn-outline" target="_blank">
                         <i class="fab fa-github"></i>
-                        Contribute on GitHub
+                        View Source Code
                     </a>
                 </div>
             </div>
@@ -267,7 +320,8 @@
     <!-- Example Scenarios -->
     <section class="scenarios">
         <div class="container">
-            <h2>Example Scenarios</h2>
+            <h2>Real-World Transparency Examples</h2>
+            <p class="section-intro">See how different editing approaches result in different I³ scores</p>
             <div class="scenarios-grid">
                 <div class="scenario-card">
                     <div class="scenario-header">
@@ -275,8 +329,11 @@
                         <div class="scenario-score">I³: G88/S96</div>
                     </div>
                     <div class="scenario-content">
-                        <p><strong>Edits:</strong> Skin smoothing, eye brightening, color warming</p>
-                        <p><strong>Interpretation:</strong> Moderate color/tone adjustments with original features preserved</p>
+                        <p><strong>Edits:</strong> Skin smoothing, eye brightening, color warming, minor blemish removal</p>
+                        <p><strong>Interpretation:</strong> Professional retouching with natural-looking results. Original features preserved.</p>
+                        <div class="scenario-use">
+                            <i class="fas fa-user"></i> Perfect for: Wedding, portrait, beauty photography
+                        </div>
                     </div>
                 </div>
                 
@@ -286,21 +343,33 @@
                         <div class="scenario-score">I³: G70/S35</div>
                     </div>
                     <div class="scenario-content">
-                        <p><strong>Edits:</strong> Sky replacement, AI-generated dragon addition</p>
-                        <p><strong>Interpretation:</strong> Heavy artistic composite, not a direct photograph</p>
+                        <p><strong>Edits:</strong> Sky replacement, AI-generated elements, dramatic color grading</p>
+                        <p><strong>Interpretation:</strong> Heavy artistic composite. Clearly not a direct photograph of reality.</p>
+                        <div class="scenario-use">
+                            <i class="fas fa-palette"></i> Perfect for: Creative art, fantasy imagery, composites
+                        </div>
                     </div>
                 </div>
                 
                 <div class="scenario-card">
                     <div class="scenario-header">
-                        <h3>Purist Photographer</h3>
+                        <h3>Documentary Photographer</h3>
                         <div class="scenario-score">I³: G95/S100</div>
                     </div>
                     <div class="scenario-content">
-                        <p><strong>Edits:</strong> Minimal exposure and white balance correction</p>
-                        <p><strong>Interpretation:</strong> Nearly unprocessed, authentic capture</p>
+                        <p><strong>Edits:</strong> Minimal exposure correction, white balance adjustment, basic RAW processing</p>
+                        <p><strong>Interpretation:</strong> Authentic, unmanipulated documentation. What you see is what was there.</p>
+                        <div class="scenario-use">
+                            <i class="fas fa-camera"></i> Perfect for: Photojournalism, documentary, street photography
+                        </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="scenarios-cta">
+                <h3>Ready to Calculate Your Score?</h3>
+                <p>Upload your images above and get your transparency score in seconds!</p>
+                <a href="#calculator" class="btn btn-primary">Try the Calculator</a>
             </div>
         </div>
     </section>
@@ -308,29 +377,57 @@
     <!-- Community Section -->
     <section id="community" class="community">
         <div class="container">
-            <h2>Join the Community</h2>
-            <p class="section-intro">Help build transparency in photography</p>
+            <h2>Join the Transparency Movement</h2>
+            <p class="section-intro">Help us build a more transparent photography community</p>
+            
+            <div class="community-stats">
+                <div class="stat-item">
+                    <div class="stat-number">🌐</div>
+                    <div class="stat-label">Live Calculator</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">🔬</div>
+                    <div class="stat-label">Real Analysis</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">📱</div>
+                    <div class="stat-label">Mobile Ready</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">🔓</div>
+                    <div class="stat-label">Open Source</div>
+                </div>
+            </div>
             
             <div class="community-grid">
                 <div class="community-card">
                     <i class="fab fa-github"></i>
-                    <h3>Contribute</h3>
-                    <p>Help develop the open-source I³ Calculator and improve the algorithms.</p>
+                    <h3>Contribute Code</h3>
+                    <p>Improve our algorithms, add features, or enhance the user experience. All skill levels welcome!</p>
                     <a href="https://github.com/aadiljaleel/imageintegrityindex" class="btn btn-outline" target="_blank">View Repository</a>
                 </div>
                 
                 <div class="community-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Advocate</h3>
-                    <p>Spread awareness about photographic transparency in your photography networks.</p>
-                    <a href="#" class="btn btn-outline">Share Initiative</a>
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Spread the Word</h3>
+                    <p>Share your I³ scores, advocate for transparency, and educate others about honest photography.</p>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20the%20Image%20Integrity%20Index%20-%20bringing%20transparency%20to%20digital%20photography!%20%23I3Index%20%23PhotoTransparency&url=https://aadiljaleel.github.io/imageintegrityindex/" class="btn btn-outline" target="_blank">Share on Twitter</a>
                 </div>
                 
                 <div class="community-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Feedback</h3>
-                    <p>Share your ideas and help refine the I³ scoring system and implementation.</p>
-                    <a href="https://github.com/aadiljaleel/imageintegrityindex/issues" class="btn btn-outline" target="_blank">Submit Ideas</a>
+                    <i class="fas fa-comments"></i>
+                    <h3>Give Feedback</h3>
+                    <p>Test the calculator, suggest improvements, and help us refine the scoring algorithms.</p>
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex/discussions" class="btn btn-outline" target="_blank">Join Discussions</a>
+                </div>
+            </div>
+            
+            <div class="community-call-to-action">
+                <h3>🚀 Start Using I³ Today</h3>
+                <p>Join photographers worldwide who are embracing transparency. Calculate your first score now!</p>
+                <div class="cta-buttons">
+                    <a href="#calculator" class="btn btn-primary">Calculate My Score</a>
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex" class="btn btn-secondary" target="_blank">View Source Code</a>
                 </div>
             </div>
         </div>

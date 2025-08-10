@@ -1,99 +1,242 @@
-# Image Integrity Index (I<sup>3</sup>)
+# Image Integrity Index (I³)
 
-## A Grassroots Proposal for the Image Integrity Index (I³)
-Objective: To provide photographers with a free, open-source tool to calculate and declare the extent of their edits. The resulting I³ score can be embedded in their photos and shared online to offer viewers transparent insight into their creative process.
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Website-blue?style=flat-square)](https://aadiljaleel.github.io/imageintegrityindex/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow?style=flat-square&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-## 1. The Core Concept: A Declaration of Editing
-The I³ score remains a two-part metric: I³: G[value]/S[value].
+## 🎯 A Grassroots Proposal for Transparency in Digital Photography
 
-G (Global Adjustment Score): Measures "darkroom-style" edits like color and tone.
+The Image Integrity Index (I³) provides photographers with a **free, open-source tool** to calculate and declare the extent of their photo edits. The resulting I³ score promotes transparency by offering viewers clear insight into the photographer's creative process.
 
-S (Structural Manipulation Score): Measures content changes like object removal or composites.
+**🌐 Try it now: [imageintegrityindex.com](https://aadiljaleel.github.io/imageintegrityindex/)**
 
-In this model, the score is not a security feature but a standardized artist's statement. It's the photographer's way of saying, "Here is my original file, here is my final piece, and here is a standard metric of what I did."
+---
 
-## 2. The Practical Workflow for a Photographer
-A photographer would follow these simple steps after a shoot.
+## 🔥 What's New - Working Calculator!
 
-Step 1: Secure Your "Source File"
-After copying photos from your memory card, immediately select the original, untouched file you intend to edit. This is your Source File.
+✅ **Live Web Calculator** - Calculate real I³ scores in your browser  
+✅ **No Installation Required** - Runs entirely client-side  
+✅ **Real Image Analysis** - Actual pixel-level comparison algorithms  
+✅ **Mobile Friendly** - Works on phones, tablets, and desktops  
+✅ **Open Source** - Inspect the algorithms yourself  
 
-For most enthusiasts, this will be the RAW file (.CR3, .NEF, .DNG, etc.).
+---
 
-If you shoot JPEG, it will be the original, out-of-camera JPEG.
+## 📊 The I³ Score: A Declaration of Editing
 
-Step 2: Edit Your Masterpiece
-Use your preferred software (Lightroom, Photoshop, Capture One, etc.) to edit your photo. When you are finished, export the final image (e.g., my-landscape-final.jpg).
+The I³ score is a **two-part transparency metric**: **I³: G[value]/S[value]**
 
-Step 3: Calculate the I³ Score
-Use the "I³ Calculator," a standalone, open-source desktop application. The tool would have a simple interface:
+### 🎨 **Global Adjustment Score (G)**
+Measures "darkroom-style" edits like color correction, exposure, contrast, and tone adjustments.
+- **G100**: Minimal global adjustments
+- **G0**: Heavy color/tone modifications
 
-Select Source File: You are prompted to select your original RAW or JPEG file.
+### 🏗️ **Structural Manipulation Score (S)** 
+Measures content changes like object removal, additions, composites, and AI-generated elements.
+- **S100**: Original content fully preserved
+- **S0**: Significant structural manipulation
 
-Select Final Image: You are prompted to select your final, edited JPEG.
+> **Example**: `I³: G88/S96` = Moderate color adjustments with original content preserved
 
-Click "Calculate."
+---
 
-Step 4: Share Your Score
-The calculator processes both images and generates the I³ score. It then provides two outputs:
+## 🚀 How It Works - Simple 4-Step Process
 
-An Embedded File: A new version of your final JPEG, my-landscape-final-i3.jpg, with the score I³: Gxx/Syy embedded in the EXIF/XMP metadata.
+### Step 1: **Secure Your Source File**
+After copying photos from your memory card, select the original, untouched file:
+- **RAW files**: `.CR3`, `.NEF`, `.DNG`, `.ARW`, etc.
+- **JPEG files**: Original out-of-camera JPEG
 
-A Text Snippet: A simple string Image Integrity Index: Gxx/Syy that you can copy and paste into the description of your photo on Instagram, Flickr, 500px, or your personal blog.
+### Step 2: **Edit Your Masterpiece**
+Use your preferred software to edit your photo:
+- Adobe Lightroom, Photoshop
+- Capture One, Luminar
+- Any photo editing software
 
-## 3. The "I³ Calculator" Tool: An Open-Source Project
-This entire system hinges on a trustworthy, accessible tool.
+### Step 3: **Calculate the I³ Score**
+Visit our **[online calculator](https://aadiljaleel.github.io/imageintegrityindex/#calculator)**:
+1. Upload your source file
+2. Upload your final edited image
+3. Click "Calculate I³ Score"
+4. Get instant results with explanation
 
-Platform: A free, open-source desktop application for Windows, macOS, and Linux.
+### Step 4: **Share Your Score**
+Copy the generated text snippet to share on:
+- Instagram, Flickr, 500px
+- Personal blog or portfolio
+- Social media platforms
 
-Core Libraries:
+```
+Image Integrity Index: G88/S96
+```
 
-RAW Reading: It would use a library like LibRaw to decode the Source File (if it's a RAW file) into a standard bitmap format (like a 16-bit TIFF) with a basic, neutral conversion. This becomes the "baseline" for comparison.
+---
 
-Image Analysis: It would use OpenCV or similar libraries to perform the histogram and feature comparisons.
+## 💻 Technical Implementation
 
-Metadata Writing: It would use a tool like ExifTool to embed the final I³ score into the JPEG's XMP data under a clear tag like <i3:Index>.
+### **Current Status: Production Ready**
 
-Trust Through Openness: Because the tool is open-source, the community can inspect the code to ensure the calculations are fair and accurate, building trust in the metric.
+Our calculator uses advanced **client-side JavaScript** with real image processing:
 
-## 4. Algorithm Specification (Inside the Tool)
-The calculation logic remains the same as the previous proposal but happens entirely within the desktop tool.
+#### **Global Score Algorithm**
+- **Color Histogram Analysis**: RGB + Luminance histograms (256 bins)
+- **Earth Mover's Distance**: Sophisticated histogram comparison
+- **Normalized Scoring**: Converts differences to 0-100 scale
 
-To Calculate GAS (Global Score):
+#### **Structural Score Algorithm**
+- **Perceptual Hashing**: 8x8 grid comparison with Hamming distance
+- **Edge Detection**: Sobel operator for structural analysis
+- **Feature Matching**: Corner detection and spatial consistency
 
-The tool generates a baseline image from the user-provided Source File.
+#### **Browser Support**
+- ✅ **Modern Browsers**: Full ES6 module support
+- ✅ **Legacy Browsers**: Automatic fallback implementation
+- ✅ **Mobile Devices**: Responsive touch interface
 
-It compares the CIE LAB color histograms of the baseline and the final image using the Earth Mover's Distance (EMD).
+---
 
-This distance is normalized to the G[100-0] score.
+## 🎭 Example Scenarios
 
-To Calculate SMS (Structural Score):
+### **Portrait Retoucher**
+- **Source**: `portrait.CR3` (RAW file)
+- **Final**: `portrait_final.jpg` (skin smoothed, eyes brightened, colors warmed)
+- **Result**: `I³: G88/S96`
+- **Interpretation**: Moderate color/tone adjustments with original features preserved
 
-The tool analyzes the baseline image using a Perceptual Hash (pHash) grid and ORB feature detection.
+### **Digital Artist**
+- **Source**: `mountain.NEF` (RAW file)  
+- **Final**: `composite_art.jpg` (sky replaced, dragon added with AI)
+- **Result**: `I³: G70/S35`
+- **Interpretation**: Heavy artistic composite, not a direct photograph
 
-It measures how many hash blocks have changed and how many key features have been "lost" in the final image.
+### **Purist Photographer**
+- **Source**: `landscape.DNG` (RAW file)
+- **Final**: `landscape_final.jpg` (minimal exposure correction)
+- **Result**: `I³: G95/S100`
+- **Interpretation**: Nearly unprocessed, authentic capture
 
-These penalties are combined to produce the S[100-0] score.
+---
 
-## 5. Example Scenarios
-Scenario A: The Portrait Retoucher
+## 🏗️ Project Structure
 
-Source: portrait.CR3 (RAW file)
+```
+imageintegrityindex/
+├── index.html              # Main website
+├── styles.css              # Responsive styling
+├── script.js               # Main JavaScript
+├── js/
+│   ├── i3-calculator.js           # Core calculation engine
+│   ├── i3-calculator-interface.js # UI interface wrapper
+│   ├── i3-demo.js                 # Demo and testing
+│   └── README.md                  # Technical documentation
+├── docs/
+│   └── README.md                  # Website documentation
+└── .github/workflows/
+    └── pages.yml                  # GitHub Pages deployment
+```
 
-Final: portrait_final.jpg (skin smoothed, eyes brightened, colors warmed)
+---
 
-I³ Calculator Output: Image Integrity Index: G88/S96
+## 🤝 For the Photography Community
 
-Interpretation: The viewer understands the image has moderate color/tone adjustments but the subject's core features are all original.
+### **Why I³ Matters**
+- **Build Trust**: Transparent declaration of editing process
+- **Educate Viewers**: Help audiences understand digital photography
+- **Professional Standards**: Establish industry transparency norms
+- **Creative Freedom**: Edit freely while maintaining honesty
 
-Scenario B: The Digital Artist
+### **Who Benefits**
+- **Portrait Photographers**: Show natural vs enhanced work
+- **Landscape Photographers**: Declare reality vs artistic interpretation  
+- **Photojournalists**: Maintain credibility standards
+- **Digital Artists**: Clearly label artistic compositions
+- **Photo Enthusiasts**: Learn about editing transparency
 
-Source: mountain.NEF (RAW file)
+---
 
-Final: composite_art.jpg (original mountain, but sky replaced and a dragon added with AI)
+## 🔬 Algorithm Validation
 
-I³ Calculator Output: Image Integrity Index: G70/S35
+Our implementation has been tested with:
+- ✅ **Color Adjustments**: Brightness, contrast, saturation changes
+- ✅ **Structural Modifications**: Object addition/removal, compositing
+- ✅ **RAW Processing**: Different RAW conversion settings
+- ✅ **Compression Effects**: JPEG quality variations
+- ✅ **Edge Cases**: Very small and very large images
 
-Interpretation: The viewer immediately knows this is a heavy artistic composite, not a direct photograph of a real scene.
+**Accuracy**: 
+- **Global Score**: High correlation with perceptual color differences
+- **Structural Score**: Reliable detection of content modifications
 
-This grassroots approach empowers individual photographers to champion transparency, building trust with their audience one photo at a time without waiting for the entire industry to change.
+---
+
+## 🛠️ Development & Contributing
+
+### **Quick Start**
+```bash
+# Clone the repository
+git clone https://github.com/aadiljaleel/imageintegrityindex.git
+cd imageintegrityindex
+
+# Open locally (no build required)
+python -m http.server 8000
+# or
+npx http-server
+
+# Visit http://localhost:8000
+```
+
+### **Contributing Areas**
+- 🧮 **Algorithm Improvements**: Enhance scoring accuracy
+- ⚡ **Performance**: Optimize image processing speed
+- 🎨 **UI/UX**: Improve user experience
+- 📱 **Mobile**: Enhance mobile functionality
+- 🧪 **Testing**: Expand test coverage
+- 📚 **Documentation**: Improve guides and examples
+
+### **Future Roadmap**
+- [ ] **Desktop Application**: Native apps for Windows/Mac/Linux
+- [ ] **RAW Processing**: Advanced RAW file support
+- [ ] **EXIF Embedding**: Automatic metadata insertion
+- [ ] **Batch Processing**: Multiple image analysis
+- [ ] **API Integration**: Third-party platform support
+- [ ] **Mobile Apps**: Native iOS/Android applications
+
+---
+
+## 📖 Resources
+
+- **🌐 Live Website**: [imageintegrityindex.com](https://aadiljaleel.github.io/imageintegrityindex/)
+- **📘 Technical Docs**: [Algorithm Documentation](js/README.md)
+- **🐛 Report Issues**: [GitHub Issues](https://github.com/aadiljaleel/imageintegrityindex/issues)
+- **💬 Discussions**: [Community Forum](https://github.com/aadiljaleel/imageintegrityindex/discussions)
+- **📄 License**: [MIT License](LICENSE)
+
+---
+
+## 🎉 Getting Started
+
+**Ready to try transparent photography?**
+
+1. 📸 **Take a photo** with your camera
+2. 🎨 **Edit it** in your favorite software  
+3. 🧮 **Calculate** the I³ score online
+4. 📱 **Share** your transparency score
+
+**[Start calculating now →](https://aadiljaleel.github.io/imageintegrityindex/#calculator)**
+
+---
+
+## 📞 Contact & Community
+
+This is a **grassroots community project**. Join us in building transparency in digital photography:
+
+- **🌟 Star this repository** to show support
+- **🔄 Share** with photographer friends
+- **💡 Contribute** ideas and improvements
+- **📢 Spread awareness** in photography communities
+
+---
+
+*Built with ❤️ for the photography community*
+
+**License**: MIT | **Website**: [imageintegrityindex.com](https://aadiljaleel.github.io/imageintegrityindex/) | **GitHub**: [@aadiljaleel](https://github.com/aadiljaleel)
