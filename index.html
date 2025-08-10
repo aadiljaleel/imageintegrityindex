@@ -52,6 +52,9 @@
                     <a href="#calculator" class="nav-link">Calculator</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#vision" class="nav-link">Industry Vision</a>
+                </li>
+                <li class="nav-item">
                     <a href="#community" class="nav-link">Community</a>
                 </li>
                 <li class="nav-item">
@@ -374,6 +377,192 @@
         </div>
     </section>
 
+    <!-- Greater Vision Section -->
+    <section id="vision" class="section vision-section">
+        <div class="container">
+            <h2>🎯 The Greater Vision: Industry-Wide Adoption</h2>
+            <div class="vision-intro">
+                <p class="section-intro">While our current browser-based calculator demonstrates the concept, the ultimate goal is to establish the Image Integrity Index as a <strong>universal standard implemented directly by camera manufacturers</strong> (Canon, Nikon, Sony, etc.) at the hardware and firmware level.</p>
+            </div>
+
+            <div class="proposal-grid">
+                <div class="proposal-card">
+                    <h3>📋 Technical Proposal for OEM Implementation</h3>
+                    <div class="proposal-content">
+                        <h4>The I³ Standard Definition</h4>
+                        <p>The index consists of two scores stored in the format <strong>I³: G[value]/S[value]</strong>:</p>
+                        <ul>
+                            <li><strong>Global Adjustment Score (GAS):</strong> Score from 100 (identical) to 0 (highly dissimilar) measuring changes in overall tonal and color distribution</li>
+                            <li><strong>Structural Manipulation Score (SMS):</strong> Score from 100 (identical) to 0 (highly dissimilar) measuring changes to underlying content and composition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="proposal-card">
+                    <h3>🔧 In-Camera Trust Anchor</h3>
+                    <div class="proposal-content">
+                        <p>For security and verifiability, camera manufacturers would implement:</p>
+                        <ol>
+                            <li><strong>RAW File Generation:</strong> Capture and save full RAW data</li>
+                            <li><strong>Authenticity Hash:</strong> Calculate SHA-256 hash of unmodified RAW</li>
+                            <li><strong>Perceptual Baseline:</strong> Generate 512x512 reference image from sensor center</li>
+                            <li><strong>Trust Anchor Embedding:</strong> Store hash and baseline in protected metadata</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="proposal-card">
+                    <h3>💻 Software Integration</h3>
+                    <div class="proposal-content">
+                        <p>Professional editing software would integrate I³ calculation:</p>
+                        <ul>
+                            <li><strong>Verification:</strong> Validate Trust Anchor integrity on import</li>
+                            <li><strong>Calculation:</strong> Compare edited image against baseline</li>
+                            <li><strong>Export:</strong> Embed final GAS and SMS scores in XMP metadata</li>
+                        </ul>
+                        <div class="code-block">
+                            <code>
+                                Namespace: i3<br>
+                                Property: i3:Index<br>
+                                Example: G92/S95
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proposal-card full-width">
+                    <h3>🗺️ Industry Implementation Roadmap</h3>
+                    <div class="roadmap">
+                        <div class="roadmap-phase current">
+                            <div class="phase-header">
+                                <span class="phase-number">1</span>
+                                <h4>Specification & Standards</h4>
+                                <span class="phase-status">Current</span>
+                            </div>
+                            <ul>
+                                <li>✅ Open Source Proof of Concept (Our current calculator)</li>
+                                <li>📋 Technical Specification Development</li>
+                                <li>🤝 Industry Working Group Formation</li>
+                                <li>📜 Standardization Body Submission (ISO, IEEE)</li>
+                            </ul>
+                        </div>
+
+                        <div class="roadmap-phase">
+                            <div class="phase-header">
+                                <span class="phase-number">2</span>
+                                <h4>Pilot Integration</h4>
+                                <span class="phase-timeline">6-12 months</span>
+                            </div>
+                            <ul>
+                                <li>🔧 SDK Development for camera manufacturers</li>
+                                <li>🧪 Pilot Programs with forward-thinking camera brands</li>
+                                <li>📱 Mobile Implementation in smartphone cameras</li>
+                                <li>🏆 Professional Market Validation</li>
+                            </ul>
+                        </div>
+
+                        <div class="roadmap-phase">
+                            <div class="phase-header">
+                                <span class="phase-number">3</span>
+                                <h4>Widespread Adoption</h4>
+                                <span class="phase-timeline">1-3 years</span>
+                            </div>
+                            <ul>
+                                <li>📷 Major Camera Manufacturer Integration</li>
+                                <li>💻 Editing Software Support (Adobe, Capture One, etc.)</li>
+                                <li>🌐 Platform Integration (Instagram, Flickr, news sites)</li>
+                                <li>📊 Consumer Awareness Campaigns</li>
+                            </ul>
+                        </div>
+
+                        <div class="roadmap-phase">
+                            <div class="phase-header">
+                                <span class="phase-number">4</span>
+                                <h4>Universal Standard</h4>
+                                <span class="phase-timeline">3-5 years</span>
+                            </div>
+                            <ul>
+                                <li>🌍 Global Industry Standard</li>
+                                <li>📺 Regulatory Recognition for journalism/legal evidence</li>
+                                <li>🎓 Educational Integration in photography courses</li>
+                                <li>🔒 Trust Infrastructure for digital media</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proposal-card">
+                    <h3>🏆 Benefits for Camera Manufacturers</h3>
+                    <div class="proposal-content">
+                        <div class="benefits-grid">
+                            <div class="benefit-category">
+                                <h4>Competitive Advantage</h4>
+                                <ul>
+                                    <li>First-mover advantage in transparency technology</li>
+                                    <li>Professional market differentiation</li>
+                                    <li>Trust building with serious photographers</li>
+                                    <li>Future-proofing against deepfakes and AI manipulation</li>
+                                </ul>
+                            </div>
+                            <div class="benefit-category">
+                                <h4>Technical Benefits</h4>
+                                <ul>
+                                    <li>Minimal firmware impact - lightweight implementation</li>
+                                    <li>Backward compatibility with existing RAW formats</li>
+                                    <li>Open standard - no proprietary lock-in</li>
+                                    <li>Incremental rollout starting with flagship models</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proposal-card">
+                    <h3>📞 Call to Action</h3>
+                    <div class="proposal-content">
+                        <div class="cta-grid">
+                            <div class="cta-category">
+                                <h4>For Camera Manufacturers</h4>
+                                <ul>
+                                    <li>📧 Contact us to discuss pilot implementation</li>
+                                    <li>🔬 Review our algorithms and provide feedback</li>
+                                    <li>🤝 Join the working group to shape the standard</li>
+                                    <li>💡 Contribute engineering expertise to refinement</li>
+                                </ul>
+                            </div>
+                            <div class="cta-category">
+                                <h4>For Software Developers</h4>
+                                <ul>
+                                    <li>🛠️ Integrate I³ calculation into editing workflows</li>
+                                    <li>📊 Support XMP metadata reading/writing</li>
+                                    <li>🔌 Build API integrations for platform support</li>
+                                    <li>🧪 Test with our reference implementation</li>
+                                </ul>
+                            </div>
+                            <div class="cta-category">
+                                <h4>For Photography Community</h4>
+                                <ul>
+                                    <li>📢 Advocate with your preferred camera brands</li>
+                                    <li>📝 Provide feedback on algorithm accuracy</li>
+                                    <li>🌟 Use and share I³ scores in your work</li>
+                                    <li>🗣️ Spread awareness about transparency benefits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vision-footer">
+                <p class="vision-tagline"><strong>The future of photography is transparent.</strong> Help us make the Image Integrity Index the universal standard for digital image authenticity.</p>
+                <div class="partnership-cta">
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex/discussions" class="btn btn-primary" target="_blank">Join Our Discussions</a>
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex/issues" class="btn btn-secondary" target="_blank">Contact for Partnerships</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Community Section -->
     <section id="community" class="community">
         <div class="container">
@@ -448,6 +637,7 @@
                         <li><a href="#about">About I³</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#calculator">Calculator</a></li>
+                        <li><a href="#vision">Industry Vision</a></li>
                         <li><a href="https://github.com/aadiljaleel/imageintegrityindex" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
