@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Integrity Index (I³) - Transparency for Photographers</title>
+    <meta name="description" content="A grassroots tool for photographers to declare the extent of their edits with the I³ score, promoting transparency in digital photography.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="photography, photo editing, transparency, digital photography, I3 index, image integrity, RAW processing, EXIF metadata">
+    <meta name="author" content="Image Integrity Index Community">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aadiljaleel.github.io/imageintegrityindex/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Image Integrity Index (I³) - Transparency for Photographers">
+    <meta property="og:description" content="A grassroots tool for photographers to declare the extent of their edits with the I³ score, promoting transparency in digital photography.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aadiljaleel.github.io/imageintegrityindex/">
+    <meta property="og:site_name" content="Image Integrity Index">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image Integrity Index (I³) - Transparency for Photographers">
+    <meta name="twitter:description" content="A grassroots tool for photographers to declare the extent of their edits with the I³ score, promoting transparency in digital photography.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>I³ Index</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#calculator" class="nav-link">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#community" class="nav-link">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex" class="nav-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Image Integrity Index (I³)</h1>
+                <p class="hero-subtitle">Transparent photography through standardized edit declarations</p>
+                <p class="hero-description">
+                    A free, open-source tool that helps photographers calculate and declare the extent of their edits, 
+                    building trust with viewers through transparency.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#calculator" class="btn btn-primary">Try Calculator</a>
+                    <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="score-example">
+                    <h3>I³ Score Example</h3>
+                    <div class="score-display">
+                        <span class="score-label">I³:</span>
+                        <span class="score-value">G88/S96</span>
+                    </div>
+                    <p class="score-explanation">
+                        G88: Moderate color/tone adjustments<br>
+                        S96: Original structural content preserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>A Declaration of Editing</h2>
+            <p class="section-intro">
+                The I³ score is a standardized artist's statement that provides transparent insight into your creative process.
+            </p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-adjust"></i>
+                    </div>
+                    <h3>Global Adjustment (G)</h3>
+                    <p>Measures "darkroom-style" edits like color correction, exposure, contrast, and tone adjustments.</p>
+                    <div class="score-range">
+                        <span>G0 (Heavy edits)</span>
+                        <span>G100 (Minimal edits)</span>
+                    </div>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Structural Manipulation (S)</h3>
+                    <p>Measures content changes like object removal, additions, composites, and AI-generated elements.</p>
+                    <div class="score-range">
+                        <span>S0 (Heavy manipulation)</span>
+                        <span>S100 (No manipulation)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p class="section-intro">Four simple steps to calculate and share your I³ score</p>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Secure Your Source File</h3>
+                        <p>After copying photos from your memory card, select the original, untouched file (RAW or JPEG) as your Source File.</p>
+                        <div class="file-types">
+                            <span class="file-type">.CR3</span>
+                            <span class="file-type">.NEF</span>
+                            <span class="file-type">.DNG</span>
+                            <span class="file-type">.JPEG</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Edit Your Masterpiece</h3>
+                        <p>Use your preferred software (Lightroom, Photoshop, Capture One, etc.) to edit your photo and export the final image.</p>
+                        <div class="software-icons">
+                            <i class="fab fa-adobe"></i>
+                            <span>Lightroom</span>
+                            <span>Photoshop</span>
+                            <span>Capture One</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Calculate the I³ Score</h3>
+                        <p>Use our I³ Calculator to compare your source file with the final image and generate your transparency score.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Share Your Score</h3>
+                        <p>Get an embedded file with metadata and a text snippet to share on Instagram, Flickr, 500px, or your blog.</p>
+                        <div class="share-example">
+                            <code>Image Integrity Index: G88/S96</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <h2>I³ Calculator</h2>
+            <p class="section-intro">Calculate your Image Integrity Index score</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="upload-section">
+                        <div class="upload-box">
+                            <i class="fas fa-upload"></i>
+                            <h4>Source File</h4>
+                            <p>Upload your original RAW or JPEG file</p>
+                            <input type="file" id="source-file" accept=".cr3,.nef,.dng,.arw,.orf,.rw2,.jpg,.jpeg" />
+                            <label for="source-file" class="upload-btn">Choose File</label>
+                        </div>
+                        
+                        <div class="upload-box">
+                            <i class="fas fa-upload"></i>
+                            <h4>Final Image</h4>
+                            <p>Upload your edited final image</p>
+                            <input type="file" id="final-file" accept=".jpg,.jpeg,.png,.tiff" />
+                            <label for="final-file" class="upload-btn">Choose File</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary calculate-btn" id="calculate-btn" disabled>
+                        <i class="fas fa-calculator"></i>
+                        Calculate I³ Score
+                    </button>
+                    
+                    <div class="result-section" id="result-section" style="display: none;">
+                        <h3>Your I³ Score</h3>
+                        <div class="score-result">
+                            <span class="score-label">I³:</span>
+                            <span class="score-value" id="score-result">G--/S--</span>
+                        </div>
+                        <p class="result-explanation" id="result-explanation"></p>
+                        <div class="share-options">
+                            <h4>Share Your Score</h4>
+                            <textarea id="share-text" readonly>Image Integrity Index: G--/S--</textarea>
+                            <button class="btn btn-secondary" onclick="copyToClipboard()">
+                                <i class="fas fa-copy"></i>
+                                Copy to Clipboard
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-info">
+                    <h3>Coming Soon</h3>
+                    <p>The I³ Calculator is currently in development as an open-source desktop application.</p>
+                    
+                    <div class="tech-stack">
+                        <h4>Technical Foundation</h4>
+                        <ul>
+                            <li><strong>LibRaw:</strong> RAW file decoding</li>
+                            <li><strong>OpenCV:</strong> Image analysis and comparison</li>
+                            <li><strong>ExifTool:</strong> Metadata embedding</li>
+                            <li><strong>Open Source:</strong> Community-verified algorithms</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-github"></i>
+                        Contribute on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Scenarios -->
+    <section class="scenarios">
+        <div class="container">
+            <h2>Example Scenarios</h2>
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <div class="scenario-header">
+                        <h3>Portrait Retoucher</h3>
+                        <div class="scenario-score">I³: G88/S96</div>
+                    </div>
+                    <div class="scenario-content">
+                        <p><strong>Edits:</strong> Skin smoothing, eye brightening, color warming</p>
+                        <p><strong>Interpretation:</strong> Moderate color/tone adjustments with original features preserved</p>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <div class="scenario-header">
+                        <h3>Digital Artist</h3>
+                        <div class="scenario-score">I³: G70/S35</div>
+                    </div>
+                    <div class="scenario-content">
+                        <p><strong>Edits:</strong> Sky replacement, AI-generated dragon addition</p>
+                        <p><strong>Interpretation:</strong> Heavy artistic composite, not a direct photograph</p>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <div class="scenario-header">
+                        <h3>Purist Photographer</h3>
+                        <div class="scenario-score">I³: G95/S100</div>
+                    </div>
+                    <div class="scenario-content">
+                        <p><strong>Edits:</strong> Minimal exposure and white balance correction</p>
+                        <p><strong>Interpretation:</strong> Nearly unprocessed, authentic capture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <h2>Join the Community</h2>
+            <p class="section-intro">Help build transparency in photography</p>
+            
+            <div class="community-grid">
+                <div class="community-card">
+                    <i class="fab fa-github"></i>
+                    <h3>Contribute</h3>
+                    <p>Help develop the open-source I³ Calculator and improve the algorithms.</p>
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex" class="btn btn-outline" target="_blank">View Repository</a>
+                </div>
+                
+                <div class="community-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Advocate</h3>
+                    <p>Spread awareness about photographic transparency in your photography networks.</p>
+                    <a href="#" class="btn btn-outline">Share Initiative</a>
+                </div>
+                
+                <div class="community-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Feedback</h3>
+                    <p>Share your ideas and help refine the I³ scoring system and implementation.</p>
+                    <a href="https://github.com/aadiljaleel/imageintegrityindex/issues" class="btn btn-outline" target="_blank">Submit Ideas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Image Integrity Index</h3>
+                    <p>Building trust through transparency in digital photography.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About I³</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#calculator">Calculator</a></li>
+                        <li><a href="https://github.com/aadiljaleel/imageintegrityindex" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/aadiljaleel/imageintegrityindex/issues" target="_blank">Report Issues</a></li>
+                        <li><a href="https://github.com/aadiljaleel/imageintegrityindex/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="https://github.com/aadiljaleel/imageintegrityindex/blob/main/LICENSE" target="_blank">License</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Image Integrity Index. Open source project under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

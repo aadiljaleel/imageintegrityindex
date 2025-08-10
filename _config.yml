@@ -1,0 +1,34 @@
+# Enable GitHub Pages
+theme: minima
+title: "Image Integrity Index (I³)"
+description: "Transparency for photographers through standardized edit declarations"
+url: "https://aadiljaleel.github.io"
+baseurl: "/imageintegrityindex"
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - docs/
+
+# Include files
+include:
+  - index.html
+  - styles.css
+  - script.js
+
+# Custom variables
+author: "Image Integrity Index Community"
+email: ""
+github_username: aadiljaleel
+repository: imageintegrityindex
+
+# SEO settings
+lang: en_US
+logo: # Add logo path when available
+
+# Social media
+social:
+  name: Image Integrity Index
+  links:
+    - https://github.com/aadiljaleel/imageintegrityindex

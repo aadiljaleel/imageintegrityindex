@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aadiljaleel.github.io/imageintegrityindex/sitemap.xml
